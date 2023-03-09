@@ -11,10 +11,13 @@ private:
     string current_result;
     vector<string> input_format;
     int state;
-    const vector<char> operators = {'+', '-', '*', '/'};
+    vector<char> operators = {'+', '-', '*', '/'};
 
     stack<string> operator_stack;
     stack<string> output_stack;
+    vector<string> reverse_polish;
+    stack<string> calStack;
+    double tmp_result;
 
     void read_expression();
     void print_result();
@@ -25,7 +28,9 @@ private:
     void infix2suffix();
     bool isOperator(char c);
     bool isDigit(char c);
+    bool isNumber(string s);
     void format_input();
+    bool isPrime(string in, string top);
 
 public:
     //Init
