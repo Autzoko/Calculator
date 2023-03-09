@@ -11,7 +11,7 @@ Calculator::Calculator()
     printf("\n");
     while(true)
     {
-        printf("\n>>");
+        printf("\n\n>>");
         read_expression();
 
         int state = define_input();
@@ -20,7 +20,7 @@ Calculator::Calculator()
         else if(state == 1) print_help();
         else
         {
-            printf("\n>>");
+            printf(">>");
             calculate();
             print_result();
         }
