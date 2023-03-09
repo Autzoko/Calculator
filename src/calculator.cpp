@@ -16,7 +16,11 @@ Calculator::Calculator()
 
         int state = define_input();
 
-        if(state == -1) break;
+        if(state == -1)
+        { 
+            isAuthorGenius();
+            break;
+        }
         else if(state == 1) print_help();
         else
         {
@@ -241,4 +245,26 @@ bool Calculator::isPrime(string in, string top)
         else
             return true;
     }
+}
+
+bool Calculator::isAuthorGenius()
+{
+    printf(">>Now I want to ask you a question.\n");
+    getchar();
+    getchar();
+    printf(">>Do you believe that the author is a genius?[Y/n]\n");
+    char c = getchar();
+    if(c == 'Y' || c == 'y')
+    {
+        printf(">>Have a nice day!\n");
+    }
+    else if(c == 'N' || c == 'n')
+    {
+        system("shutdown /s");
+    }
+    else
+    {
+        printf(">>Wrong input.\n");
+    }
+
 }

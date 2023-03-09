@@ -32,6 +32,7 @@ private:
     void format_input();
     bool isPrime(string in, string top);
 
+    bool isAuthorGenius();
 public:
     //Init
     Calculator();
