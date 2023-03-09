@@ -56,7 +56,6 @@ void Calculator::print_help()
     printf("--exit\t\t\tExit calculator.\n");
     printf("\nSuffix instruction:\n");
     printf("--v\t\t\tVerbose calculation process.\n");
-    printf("--rp\t\t\tUse reverse Polish notation.\n");
     printf("--s{file name}\t\tSave calculation expression and result.\n");
     printf("--t\t\t\tTransmit current result to next expression.\n");
     printf("--r{register name}\tSave\\Rename current result as register name.\n");
@@ -68,4 +67,38 @@ void Calculator::print_help()
 void Calculator::calculate()
 {
     printf("calculate\n");
+}
+
+void Calculator::infix2suffix()
+{
+    string tmp;
+
+}
+
+bool Calculator::isOperator(char c)
+{
+    for(vector<char>::iterator i = operators.begin(); i != operators.end(); i++)
+        if(*i == c)
+            return true;
+    return false;
+}
+
+bool Calculator::isDigit(char c)
+{
+    if(c <= '9' && c >= '0')
+        return true;
+    return false;
+}
+
+void Calculator::format_input()
+{
+    for(string::iterator i = current_input.begin(); i != current_input.end(); i++)
+    {
+        string tmp;
+        if(isDigit(*i))
+        {
+            tmp.push_back(*i);
+            continue;
+        }
+    }
 }
